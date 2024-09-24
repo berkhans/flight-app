@@ -1,0 +1,40 @@
+/* Tailwind CSS'in baz stil, bileşen ve yardımcı sınıflarını dahil ediyoruz */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Tüm sayfa yapısını sıfırlıyoruz ve arka plan rengini Tailwind ile uyguluyoruz */
+body {
+  margin: 0;
+  @apply bg-gray-100; /* Sayfanın arka plan rengini açık gri yapıyoruz */
+}
+
+/* Menüde kullanılan iconların ortalanması */
+.menu-link .anticon {
+  display: flex; /* Iconları blok yapısına getiriyoruz */
+  justify-content: center; /* Iconları yatayda ortalıyoruz */
+}
+
+/* HomePage bölümüne yönelik stil */
+/* Taşma durumunda içeriğin gizlenmesini sağlar */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Küçük ekranlar için (max-width: 768px) stil ayarları */
+@media (max-width: 768px) {
+  body {
+    overflow: auto; /* Küçük ekranlarda kaydırmayı aktif hale getiriyoruz */
+  }
+
+  /* Arama kartındaki büyük metinlerin küçük ekranlar için küçültülmesi */
+  .search-card .text-lg {
+    font-size: 1rem; /* Küçük ekranlar için yazı boyutunu küçültüyoruz */
+  }
+
+  /* Seyahat seçeneklerinin (trip-options) küçük ekranlarda düzenlenmesi */
+  .search-card .trip-options {
+    margin-top: 2.5rem; /* Yukarıdan 2.5rem boşluk bırakıyoruz */
+    font-size: 0.5rem; /* Küçük ekranlarda font boyutunu küçültüyoruz */
+  }
+}
